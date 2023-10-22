@@ -38,7 +38,8 @@ CREATE TABLE IF NOT EXISTS Empleado (
         REFERENCES Departamento (id_departamento)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (fk_id_responsable)
-        REFERENCES Empleado (id_trabajador),
+        REFERENCES Empleado (id_trabajador)
+        ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (fk_id_contrato)
         REFERENCES Contrato (id_contrato)
         ON DELETE CASCADE ON UPDATE CASCADE
@@ -84,17 +85,80 @@ insert into Nomina (fk_id_contrato, salario) values (10, 1935.39);
     
 -- Empleado ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (1, 8, 1, '082829587-5', '750-67-4819', 'Mauricio', 'Yuille', '1st Floor', '527 767 5250');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (1, 8, 2, '337678846-4', '761-12-8493', 'Gösta', 'de Grey', '14th Floor', '739 888 0209');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (4, 8, 3, '382236173-9', '619-65-1653', 'Dafnée', 'Lye', 'PO Box 73128', '217 822 6114');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (5, 8, 4, '880066794-5', '763-75-5042', 'Gösta', 'Valenti', 'Apt 1583', '119 322 6000');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (4, 8, 5, '196290210-2', '840-65-6786', 'Yénora', 'Berndt', 'PO Box 57046', '664 516 7412');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (3, 5, 6, '574122901-8', '792-06-3955', 'Béatrice', 'Dewsnap', 'Apt 994', '697 530 1123');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (9, 5, 7, '645335909-X', '731-10-2331', 'Esbjörn', 'Nellen', 'Room 410', '354 432 5476');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (7, 5, 8, '089444934-6', '267-80-5716', 'Maëlla', 'Davidek', '2nd Floor', '659 189 4404');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (7, 3, 9, '978503047-4', '795-61-5579', 'Edmée', 'Maron', 'Suite 1', '571 564 2718');
-insert into Empleado (fk_id_departamento, fk_id_responsable, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (6, 3, 10, '926182158-8', '322-50-6835', 'Shadow', 'Stamp', 'Room 1384', '157 313 1899');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (1, 1, '082829587-5', '750-67-4819', 'Mauricio', 'Yuille', '1st Floor', '527 767 5250');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (1, 2, '337678846-4', '761-12-8493', 'Gösta', 'de Grey', '14th Floor', '739 888 0209');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (4, 3, '382236173-9', '619-65-1653', 'Dafnée', 'Lye', 'PO Box 73128', '217 822 6114');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (5, 4, '880066794-5', '763-75-5042', 'Gösta', 'Valenti', 'Apt 1583', '119 322 6000');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (4, 5, '196290210-2', '840-65-6786', 'Yénora', 'Berndt', 'PO Box 57046', '664 516 7412');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (3, 6, '574122901-8', '792-06-3955', 'Béatrice', 'Dewsnap', 'Apt 994', '697 530 1123');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (9, 7, '645335909-X', '731-10-2331', 'Esbjörn', 'Nellen', 'Room 410', '354 432 5476');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (7, 8, '089444934-6', '267-80-5716', 'Maëlla', 'Davidek', '2nd Floor', '659 189 4404');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (7, 9, '978503047-4', '795-61-5579', 'Edmée', 'Maron', 'Suite 1', '571 564 2718');
+insert into Empleado (fk_id_departamento, fk_id_contrato, DNI, num_ss, nombre, apellidos, direccion, telefono) values (6, 10, '926182158-8', '322-50-6835', 'Shadow', 'Stamp', 'Room 1384', '157 313 1899');
 
 -- UPDATES --
 
+UPDATE Empleado 
+SET 
+    fk_id_responsable = 8
+WHERE
+    id_trabajador = 1;
+    
+    UPDATE Empleado 
+SET 
+    fk_id_responsable = 5
+WHERE
+    id_trabajador = 2;
+    
+UPDATE Empleado 
+SET 
+    fk_id_responsable = 8
+WHERE
+    id_trabajador = 3;
+    
+    UPDATE Empleado 
+SET 
+    fk_id_responsable = 8
+WHERE
+    id_trabajador = 4;
+    
+    UPDATE Empleado 
+SET 
+    fk_id_responsable = 8
+WHERE
+    id_trabajador = 5;
+    
+UPDATE Empleado 
+SET 
+    fk_id_responsable = 5
+WHERE
+    id_trabajador = 6;
+    
+    UPDATE Empleado
+SET               
+    fk_id_responsable = 3
+WHERE
+    id_trabajador = 7;
+    
+    UPDATE Empleado 
+SET 
+    fk_id_responsable = 5
+WHERE
+    id_trabajador = 8;
+    
+UPDATE Empleado 
+SET 
+    fk_id_responsable = 5
+WHERE
+    id_trabajador = 9;
+    
+    UPDATE Empleado 
+SET 
+    fk_id_responsable = 3
+WHERE
+    id_trabajador = 10;
+    
 -- DELETES --
+DELETE FROM Empleado 
+WHERE
+    id_trabajador = 3;

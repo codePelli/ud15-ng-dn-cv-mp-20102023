@@ -160,11 +160,28 @@ insert into Impartir (fk_DNI, fk_codigo) values ('857-52-5994', '499-15-5588');
 
 -- UPDATES --
 
-UPDATE Empresa SET direccion = "8th Floor" WHERE CIF = '363-21-0436';
-UPDATE Alumno SET fk_empresa = NULL WHERE fk_empresa = '660-76-3974';
-UPDATE Profesor SET telefono = '866 776 2482' WHERE DNI = '166-27-5472';
+UPDATE Empresa 
+SET 
+    direccion = '8th Floor'
+WHERE
+    CIF = '363-21-0436';
+UPDATE Alumno 
+SET 
+    fk_empresa = NULL
+WHERE
+    fk_empresa = '660-76-3974';
+    
+UPDATE Profesor 
+SET 
+    telefono = '866 776 2482'
+WHERE
+    DNI = '166-27-5472';
 
 -- DELETES --
 
-DELETE FROM Alumno WHERE DNI = '188-36-6639';
-DELETE FROM Profesor WHERE DNI = '298-94-3636';
+DELETE FROM Alumno 
+WHERE
+    DNI = '188-36-6639';
+DELETE FROM Profesor 
+WHERE
+    DNI = '298-94-3636';
